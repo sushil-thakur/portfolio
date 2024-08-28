@@ -41,6 +41,11 @@ body {
     font-weight: 500;
     margin-left: 35px;
     transition: 0.3s;
+    opacity: 0;
+    animation: slideRight 0.5s ease forwards;
+    opacity: 0 ;
+    animation-delay: calc(0.2s * var(--i));
+    animation: slideTop 0.5s ease forwards;
 }
 
 .navbar a:hover {
@@ -81,6 +86,9 @@ p {
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards 0.5s;
+    animation-name: -7s;
 }
 
 .home-content h3:nth-of-type(2) {
@@ -95,10 +103,15 @@ p {
     font-size: 56px;
     font-weight: 700;
     margin: -3px 0;
+    animation: slideBottom 1s ease forwards 0.5s;
+    animation-name: 1s;
 }
 
 .home-content p {
     font-size: 20px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards 0.7s;
+    animation-delay: 1s;
 }
 
 .home-sci a {
@@ -115,6 +128,10 @@ p {
     text-decoration: none;
     margin: 30px 15px 30px 0;
     transition: 0.5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+    transition: .5s ease;
 }
 
 .home-sci a:hover {
@@ -133,8 +150,55 @@ p {
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,0 0 25px #0ef;
+
 }
 
 .btn-box:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translatey(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom{
+    0%{
+        transform: translatey(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0);
+        opacity: 1;
+    }
 }
