@@ -7,7 +7,6 @@
 
 body {
     color: white;
-    background-color: #000; /* Optional: Add a background color if the image doesn't load */
     background: #081b29;
 }
 
@@ -16,8 +15,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10px;
-    background: #051129;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,23 +26,24 @@ body {
 .logo {
     position: relative;
     font-size: 25px;
-    color: aliceblue;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
+    cursor: default;
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
 
 .navbar a {
     display: inline-block;
-    font-size: 25px;
+    font-size: 18px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: 0.3s;
     opacity: 0;
-    animation: slideRight 0.5s ease forwards;
+    animation: slideTop 0.5s ease forwards;
     animation-delay: calc(0.2s * var(--i));
 }
 
@@ -54,6 +54,7 @@ body {
 .home {
     position: relative;
     width: 100%;
+    justify-content: space-between;
     height: 100vh;
     background: url("image/me.png") no-repeat;
     background-size: cover;
@@ -67,32 +68,18 @@ body {
     max-width: 600px;
 }
 
-h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
     opacity: 0;
-    animation: slideBottom 1s ease forwards 0.5s;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 0.7s;
 }
 
 .home-content h3:nth-of-type(2) {
     margin-bottom: 30px;
-    animation: slideTop 1s ease forwards ;
-    animation-delay: .7s;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.7s;
 }
 
 .home-content h3 span {
@@ -103,13 +90,15 @@ p {
     font-size: 56px;
     font-weight: 700;
     margin: -3px 0;
-    animation: slideBottom 1s ease forwards 0.5s;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
 }
 
 .home-content p {
     font-size: 20px;
     opacity: 0;
-    animation: slideBottom 1s ease forwards 0.7s;
+    animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
 }
 
@@ -127,7 +116,7 @@ p {
     text-decoration: none;
     margin: 30px 15px 30px 0;
     transition: 0.5s ease;
-    opacity: 1;
+    opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: calc(0.2s * var(--i));
 }
@@ -151,50 +140,54 @@ p {
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
-    box-shadow: 0 0 5px #0ef,0 0 25px #0ef;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
 }
 
 .btn-box:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
 }
-.about{
+
+.about {
     display: grid;
-  grid-template-columns: repeat(2 ,1fr);
-  align-items: center;
-  gap: 1.3rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 100px 10%;
 }
-.about-img img{
-    padding-bottom: 20%;
+
+.about-img img {
     max-width: 630px;
     height: auto;
+    width: 100%;
     border-radius: 8px;
+}
 
-}
-.about-text h2{
+.about-text h2 {
     font-size: 60px;
-    
+    line-height: 1;
 }
-.about-text h2 span{
- color:#0ef;
+
+.about-text h2 span {
+    color: #0ef;
 }
-.about-text h4{
+
+.about-text h4 {
     font-size: 29px;
     font-weight: 600;
-    line-height: 1.7;
     color: #fff;
-    margin: 15px0 30px;
+    line-height: 1.7;
+    margin: 15px 0 30px;
 }
-.about-text p{
-    color: aliceblue;
+
+.about-text p {
+    color: #fff;
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
 }
-#service {
-    color: aliceblue;
-    font-size: 20px;
-    line-height: 1.4;
-    margin-bottom: 4rem;
+
+#services {
+    padding: 100px 10%;
 }
 
 .sub-title {
@@ -207,10 +200,6 @@ p {
     color: #0ef;
 }
 
-.container {
-    padding: 90px;
-}
-
 .service-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -219,33 +208,50 @@ p {
 }
 
 .service-list div {
-    background-color: transparent;
+    background: rgba(0, 0, 0, 0.1);
     padding: 40px;
     font-size: 13px;
-    font-weight: 500; /* Corrected font-weight */
-    border-right: 10px solid transparent; /* Complete border-right */
+    font-weight: 500;
     border-radius: 20px;
     transition: background 0.5s, transform 0.5s;
-    box-shadow: 1px 1px 20px #012290f7, 1px 1px 1px #012290f7;
+    box-shadow: 1px 1px 20px rgba(0, 238, 255, 0.1);
+}
+
+.service-list div:hover {
+    background: #0ef;
+    transform: translateY(-10px);
 }
 
 .service-list div i {
     font-size: 50px;
     margin-bottom: 30px;
+    color: #0ef;
+    transition: color 0.5s;
+}
+
+.service-list div:hover i {
+    color: #081b29;
 }
 
 .service-list div h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
+    color: #fff;
+    transition: color 0.5s;
 }
 
-.service-list div a {
-    text-decoration: none;
-    color: #081b29; /* Set the color to a visible one */
-    font-size: 12px;
-    margin-top: 20px;
-    display: inline-block;
+.service-list div:hover h2 {
+    color: #081b29;
+}
+
+.service-list div p {
+    color: #fff;
+    transition: color 0.5s;
+}
+
+.service-list div:hover p {
+    color: #081b29;
 }
 
 .read {
@@ -253,47 +259,377 @@ p {
     padding: 12px 28px;
     background: #0ef;
     font-size: 16px;
-    color: #081b29; /* Ensure the text color is not transparent */
+    color: #081b29;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
     border-radius: 40px;
     transition: 0.5s ease;
+    margin-top: 20px;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
-    box-shadow: 0 0 5px #0ef,0 0 25px #0ef;
-   
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
 }
 
 .read:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+    background: #081b29;
+    color: #0ef;
 }
-.services-list div:hover {
-    transform: translateY(-10px);
+
+.skills {
+    padding: 100px 10%;
 }
-section{
+
+.skills .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.skills .container > div {
+    width: 100%;
+}
+
+.Technical-bars .bar {
+    margin: 20px 0;
+}
+
+.Technical-bars .bar:first-child {
+    margin-top: 0;
+}
+
+.Technical-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.Technical-bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.Technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #081b29;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 85%;
+}
+
+.progress-line.javascript span {
+    width: 75%;
+}
+
+.progress-line.python span {
+    width: 70%;
+}
+
+.progress-line.react-native span {
+    width: 65%;
+}
+
+.progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #081b29;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText2 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line.html span::after {
+    content: "90%";
+}
+
+.progress-line.css span::after {
+    content: "85%";
+}
+
+.progress-line.javascript span::after {
+    content: "75%";
+}
+
+.progress-line.python span::after {
+    content: "70%";
+}
+
+.progress-line.react-native span::after {
+    content: "65%";
+}
+
+.radial-bars {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
 }
-.container{
-    width: 600px;
-    height: 500px;
-    padding: 75px 90px;
-    margin-left: 120px;
+
+.radial-bars .radial-bar {
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
 }
-.heading1{
+
+.radial-bars .radial-bar svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 120px;
+    height: 160px;
+}
+
+.radial-bars .radial-bar .progress-bar {
+    fill: none;
+    stroke: #081b29;
+    stroke-width: 10;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.radial-bars .radial-bar .path {
+    fill: none;
+    stroke: #0ef;
+    stroke-width: 10;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.radial-bars .radial-bar .path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.radial-bars .radial-bar .path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.radial-bars .radial-bar .path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.radial-bars .radial-bar .path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
+.radial-bars .radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText2 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.radial-bars .radial-bar .text {
+    width: 100%;
+    position: absolute;
     text-align: center;
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
-    margin-bottom: 50px
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText2 0.5s 1s linear forwards;
+    opacity: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a192f;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
 
+.skills-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #06b6d4;
+}
 
+/* Technical Skills */
+.technical-skills .skill {
+    margin-bottom: 20px;
+}
 
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.skill-name {
+    display: flex;
+    align-items: center;
+}
+
+.skill-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: #1e293b;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Professional Skills */
+.professional-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.circular-progress svg {
+    width: 100%;
+    height: 100%;
+}
+
+.circular-progress circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-background {
+    stroke: #1e293b;
+}
+
+.progress-bar {
+    stroke: #06b6d4;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.professional-skill p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Skill-specific colors */
+.html .skill-progress { background-color: #E44D26; }
+.css .skill-progress { background-color: #264DE4; }
+.javascript .skill-progress { background-color: #F0DB4F; }
+.python .skill-progress { background-color: #3776AB; }
+.react .skill-progress { background-color: #61DAFB; }
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showText2 {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 50;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 100;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 150;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 200;
+    }
+}
 
 @keyframes slideRight {
     0% {
@@ -308,7 +644,7 @@ section{
 
 @keyframes slideLeft {
     0% {
-        transform: translateX(-100px);
+        transform: translateX(100px);
         opacity: 0;
     }
     100% {
@@ -319,7 +655,7 @@ section{
 
 @keyframes slideTop {
     0% {
-        transform: translateY(-100px);
+        transform: translateY(100px);
         opacity: 0;
     }
     100% {
@@ -330,7 +666,7 @@ section{
 
 @keyframes slideBottom {
     0% {
-        transform: translateY(100px);
+        transform: translateY(-100px);
         opacity: 0;
     }
     100% {
