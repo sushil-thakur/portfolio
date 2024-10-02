@@ -389,7 +389,7 @@ body {
 }
 
 .progress-line.javascript span::after {
-    content: "65%";
+    content: "50%";
 }
 
 .progress-line.python span::after {
@@ -397,7 +397,7 @@ body {
 }
 
 .progress-line.react-native span::after {
-    content: "40%";
+    content: "30%";
 }
 
 .radial-bars {
